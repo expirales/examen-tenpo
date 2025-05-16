@@ -14,7 +14,7 @@ export default function HomePage() {
   const [products, setProducts] = useState<Product[]>([]);
   const [isShowInfoModal, setIsShowInfoModal] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [page, setPage] = useState(0);
+  const [_, setPage] = useState(0);
 
   const fetchProducts = useCallback(
     async () => {
