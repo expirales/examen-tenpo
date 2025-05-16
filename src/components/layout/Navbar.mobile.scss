@@ -1,0 +1,12 @@
+@media (max-width: 480px) {
+  .cnt-navbar {
+    .navbar-user {
+      .email {
+        display: none;
+      }
+      .avatar-icon {
+        display: inline !important;
+      }
+    }
+  }
+}

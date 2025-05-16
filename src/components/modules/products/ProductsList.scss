@@ -1,0 +1,38 @@
+@use "./ProductList.mobile.scss";
+
+.cnt-product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 0;
+
+  .product-item {
+    list-style-type: none;
+  }
+  .cnt-product-card {
+    cursor: pointer;
+    height: 300px;
+    padding: 1rem;
+    color: black;
+    border-radius: 8px;
+    background-color: white;
+    .name {
+      font-size: 1rem;
+      margin-top: 1.1rem;
+      margin-bottom: 1.1rem;
+    }
+    .thumbnail {
+      object-fit: contain;
+      width: 100%;
+      height: 80px;
+    }
+    .description {
+      font-size: 0.8rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 6;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
