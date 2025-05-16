@@ -20,11 +20,14 @@ const useAuthStore = create<AuthState>()(
         email: null,
       },
       login: (token, email) => set({ user: { token, email } }),
-      logout: () => set({ user: { token: null, email: null } }),
+      logout: () => {
+        set({ user: { token: null, email: null } });
+        localStorage.removeItem("auth-storage");
+      },
     }),
     {
       name: "auth-storage",
-      storage: createJSONStorage(() => sessionStorage),
+      storage: createJSONStorage(() => localStorage),
     }
   )
 );
