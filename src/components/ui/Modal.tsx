@@ -27,7 +27,7 @@ const Modal = ({ title = "Info", onClose, children }: ModalProps) => {
             ×
           </button>
         </div>
-        <div style={{ maxHeight: "50vh", overflowY: "auto" }}>{children}</div>
+        <div className="body">{children}</div>
       </div>
     </div>
   );

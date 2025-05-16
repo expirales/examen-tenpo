@@ -13,18 +13,12 @@ import InfoApp from "../components/InfoApp";
 export default function HomePage() {
   const [products, setProducts] = useState<Product[]>([]);
   const [isShowInfoModal, setIsShowInfoModal] = useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_, setPage] = useState(0);
+  const [page, setPage] = useState(0);
 
-  const fetchProducts = useCallback(
-    async () => {
-      const response = await productOperator.loadProducts(/* page */); // <- page viene de tu operador
-      setProducts((prev) => [...prev, ...response.data.products]);
-    },
-    [
-      /* page */
-    ]
-  );
+  const fetchProducts = useCallback(async () => {
+    const response = await productOperator.loadProducts(page);
+    setProducts((prev) => [...prev, ...response.data.products]);
+  }, [page]);
 
   useInfiniteScroll({
     callback: () => setPage((prev) => prev + 1),

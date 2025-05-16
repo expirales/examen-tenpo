@@ -27,6 +27,10 @@
     max-width: 90%;
     color: black;
   }
+  .body {
+    max-height: 50vh;
+    overflow-y: auto;
+  }
   .cnt-modal-header {
     display: flex;
     justify-content: space-between;

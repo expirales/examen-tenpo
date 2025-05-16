@@ -56,7 +56,7 @@ function ProductCard({ title, thumbnail, description }: Product) {
         loading="lazy"
         className="thumbnail"
         onError={(e) => {
-          e.currentTarget.src = PlaceholderIcon; // Ruta local o externa
+          e.currentTarget.src = PlaceholderIcon;
         }}
       />
       <h6 className="name">{title}</h6>
