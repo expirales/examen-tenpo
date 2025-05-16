@@ -16,7 +16,7 @@ export default function HomePage() {
   const [page, setPage] = useState(0);
 
   const fetchProducts = useCallback(async () => {
-    const response = await productOperator.loadProducts(page); // <- page viene de tu operador
+    const response = await productOperator.loadProducts(/* page */); // <- page viene de tu operador
     setProducts((prev) => [...prev, ...response.data.products]);
   }, [page]);
 
