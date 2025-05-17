@@ -1,6 +1,7 @@
 import Each from "../../common/Each";
 import "./ProductsList.scss";
 import PlaceholderIcon from "../../../assets/placeholder.png";
+import { memo } from "react";
 type Dimensions = {
   width: number;
   height: number;
@@ -47,7 +48,11 @@ export type Product = {
   weight: number;
 };
 
-function ProductCard({ title, thumbnail, description }: Product) {
+const ProductCard: React.FC<Product> = memo(function ProductCard({
+  title,
+  thumbnail,
+  description,
+}) {
   return (
     <article className="cnt-product-card">
       <img
@@ -63,7 +68,7 @@ function ProductCard({ title, thumbnail, description }: Product) {
       <p className="description">{description}</p>
     </article>
   );
-}
+});
 
 export default function ProductList({ products }: { products: Product[] }) {
   return (
